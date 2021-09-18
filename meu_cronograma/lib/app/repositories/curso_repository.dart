@@ -31,16 +31,26 @@ class CursoRepository implements ICursoRepository {
 
   @override
   void save(CursoModel curso) async {
-    final db = await getDatabase();
-    if (cursos.contains(curso)) {
-      db.update(Constants.cursoTable, curso.toMap(),
-          where: 'id = ?', whereArgs: [curso.id]);
-      cursos.remove(curso);
+    if (curso != null) {
+      print(curso);
     } else {
-      int id = await db.insert(Constants.cursoTable, curso.toMap());
-      curso.id = id;
+      print(curso);
     }
-    cursos.add(curso);
+
+    /*  try {
+      final db = await getDatabase();
+      if (cursos.contains(curso)) {
+        db.update(Constants.cursoTable, curso.toMap(),
+            where: 'id = ?', whereArgs: [curso.id]);
+        cursos.remove(curso);
+      } else {
+        int id = await db.insert(Constants.cursoTable, curso.toMap());
+        curso.id = id;
+      }
+      cursos.add(curso);
+    } catch (e) {
+      print(e);
+    } */
   }
 
   @override
