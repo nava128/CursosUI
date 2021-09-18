@@ -31,13 +31,7 @@ class CursoRepository implements ICursoRepository {
 
   @override
   void save(CursoModel curso) async {
-    if (curso != null) {
-      print(curso);
-    } else {
-      print(curso);
-    }
-
-    /*  try {
+    try {
       final db = await getDatabase();
       if (cursos.contains(curso)) {
         db.update(Constants.cursoTable, curso.toMap(),
@@ -50,7 +44,7 @@ class CursoRepository implements ICursoRepository {
       cursos.add(curso);
     } catch (e) {
       print(e);
-    } */
+    }
   }
 
   @override

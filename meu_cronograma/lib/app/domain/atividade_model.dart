@@ -31,10 +31,10 @@ abstract class BaseAtividadeModel with Store {
       {required this.nome, required this.idCurso, this.feito = false});
 
   BaseAtividadeModel.fromDb(Map<String, dynamic> map)
-      : id = map['id'],
-        nome = map['nome'],
+      : id = map['id'] ?? "",
+        nome = map['nome'] ?? "",
         feito = map['feito'] == 'true',
-        idCurso = map['idCurso'];
+        idCurso = map['idCurso'] ?? 0;
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{

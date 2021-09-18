@@ -7,21 +7,26 @@ import 'package:flutter/material.dart';
 import 'curso_form.dart';
 
 class CursoPage extends StatefulWidget {
-  final CursoModel curso;
-  const CursoPage({Key? key, required this.curso}) : super(key: key);
-
+  final CursoModel? curso;
+  const CursoPage({Key? key, this.curso}) : super(key: key);
   @override
   CursoPageState createState() => CursoPageState();
 }
 
 class CursoPageState extends State<CursoPage> {
   final CursoStore store = Modular.get();
+  final CursoModel curso =
+      CursoModel(id: 0, nome: "nome", descricao: "descricao");
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Observer(builder: (_) => Text(widget.curso.nome))),
-      body: SingleChildScrollView(child: CursoForm(curso: widget.curso)),
+      appBar: AppBar(
+          title: Observer(
+              builder: (_) => curso == null
+                  ? const Text('Sem cursos cadastrados')
+                  : Text(curso.nome))),
+      body: SingleChildScrollView(child: CursoForm(curso: curso)),
     );
   }
 }

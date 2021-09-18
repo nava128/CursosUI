@@ -11,9 +11,9 @@ import '../../app_widget.dart';
 import '../../domain/curso_model.dart';
 
 class CursoForm extends StatefulWidget {
-  final CursoModel curso;
+  final CursoModel? curso;
 
-  CursoForm({Key? key, required this.curso}) : super(key: key);
+  CursoForm({Key? key, this.curso}) : super(key: key);
 
   @override
   _CursoFormState createState() => _CursoFormState();
@@ -44,14 +44,14 @@ class _CursoFormState extends State<CursoForm> {
           children: <Widget>[
             Observer(
               builder: (_) => Visibility(
-                  visible: widget.curso.logoImage != null,
+                  visible: true,
                   child: GestureDetector(
                       onTap: () => updateImage(),
                       child: Center(
                         child: Container(
                             height: 200,
                             width: 200,
-                            child: widget.curso.logoImage ??
+                            child: widget.curso?.logoImage ??
                                 Image.asset("assets/images/camera-empty.png")),
                       ))),
             ),
@@ -59,7 +59,7 @@ class _CursoFormState extends State<CursoForm> {
                 builder: (_) => TextFormField(
                       validator: textValidator(),
                       onChanged: updateNome,
-                      initialValue: widget.curso.nome,
+                      initialValue: widget.curso?.nome,
                       decoration: const InputDecoration(
                           border: OutlineInputBorder(), labelText: "Nome"),
                       maxLength: 100,
@@ -67,7 +67,7 @@ class _CursoFormState extends State<CursoForm> {
             Observer(
                 builder: (_) => TextFormField(
                       onChanged: updateLink,
-                      initialValue: widget.curso.link,
+                      initialValue: widget.curso?.link,
                       decoration: const InputDecoration(
                           border: OutlineInputBorder(),
                           labelText: "Link Curso"),
@@ -77,7 +77,7 @@ class _CursoFormState extends State<CursoForm> {
                 builder: (_) => TextFormField(
                       validator: textValidator(),
                       onChanged: updateDescricao,
-                      initialValue: widget.curso.descricao,
+                      initialValue: widget.curso?.descricao,
                       decoration: const InputDecoration(
                           border: OutlineInputBorder(), labelText: "Descrição"),
                       keyboardType: TextInputType.multiline,
@@ -94,7 +94,8 @@ class _CursoFormState extends State<CursoForm> {
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         print(_formKey.currentState!.validate());
-                        _cursoRepository.save(widget.curso);
+                        print(widget.curso);
+                        _cursoRepository.save(widget.curso!);
                         Navigator.of(context)
                             .pushNamedAndRemoveUntil("/", (_) => false);
                       }
@@ -126,21 +127,21 @@ class _CursoFormState extends State<CursoForm> {
   void updateImage() async {
     final pickedFile = await picker.pickImage(source: ImageSource.gallery);
     if (pickedFile != null) {
-      widget.curso.imagePath = pickedFile.path;
-      widget.curso.setLogoImage(Image.file(File(pickedFile.path)));
+      widget.curso?.imagePath = pickedFile.path;
+      widget.curso?.setLogoImage(Image.file(File(pickedFile.path)));
     }
   }
 
   void updateNome(nome) {
-    widget.curso.setNome(nome);
+    widget.curso?.setNome(nome);
   }
 
   void updateLink(link) {
-    widget.curso.setLink(link);
+    widget.curso?.setLink(link);
   }
 
   void updateDescricao(descricao) {
-    widget.curso.setDescricao(descricao);
+    widget.curso?.setDescricao(descricao);
   }
 
   FieldValidator textValidator() {

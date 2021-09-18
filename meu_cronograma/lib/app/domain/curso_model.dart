@@ -25,7 +25,7 @@ abstract class BaseCursoModel with Store {
   @observable
   Image? logoImage = Image.asset("assets/images/camera-empty.png");
 
-  String imagePath = "";
+  String imagePath = "assets/images/camera-empty.png";
 
   @action
   setDescricao(String descricao) {
@@ -55,9 +55,9 @@ abstract class BaseCursoModel with Store {
   BaseCursoModel.empty();
 
   BaseCursoModel.fromDb(Map<String, dynamic> map)
-      : id = map['id'],
-        nome = map['nome'],
-        descricao = map['descricao'],
+      : id = map['id'] ?? 0,
+        nome = map['nome'] ?? "",
+        descricao = map['descricao'] ?? "",
         link = map['link'],
         percentConcluido = map['atividadesFeitas'] == null
             ? 0
