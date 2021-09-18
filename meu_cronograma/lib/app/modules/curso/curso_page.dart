@@ -15,8 +15,9 @@ class CursoPage extends StatefulWidget {
 
 class CursoPageState extends State<CursoPage> {
   final CursoStore store = Modular.get();
-  final CursoModel curso =
-      CursoModel(id: 0, nome: "nome", descricao: "descricao");
+  CursoModel? curso;
+  // final CursoModel curso =
+  //     CursoModel(id: 0, nome: "nome", descricao: "descricao");
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +26,9 @@ class CursoPageState extends State<CursoPage> {
           title: Observer(
               builder: (_) => curso == null
                   ? const Text('Sem cursos cadastrados')
-                  : Text(curso.nome))),
-      body: SingleChildScrollView(child: CursoForm(curso: curso)),
+                  : Text(curso!.nome))),
+      body: SingleChildScrollView(
+          child: CursoForm(curso: curso ?? CursoModel.empty())),
     );
   }
 }
