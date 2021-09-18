@@ -1,6 +1,7 @@
-import 'package:meu_cronograma/app/modules/curso/curso_Page.dart';
 import 'package:meu_cronograma/app/modules/curso/curso_store.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+
+import 'curso_page.dart';
 
 class CursoModule extends Module {
   @override
