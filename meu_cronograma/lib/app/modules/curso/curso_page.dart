@@ -20,8 +20,7 @@ class CursoPageState extends State<CursoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          title: Observer(builder: (_) => Text(widget.curso.nome ?? ''))),
+      appBar: AppBar(title: Observer(builder: (_) => Text(widget.curso.nome))),
       body: SingleChildScrollView(child: CursoForm(curso: widget.curso)),
     );
   }
