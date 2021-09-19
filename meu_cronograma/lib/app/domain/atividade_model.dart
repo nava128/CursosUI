@@ -5,7 +5,7 @@ part 'atividade_model.g.dart';
 class AtividadeModel = BaseAtividadeModel with _$AtividadeModel;
 
 abstract class BaseAtividadeModel with Store {
-  int id = 0;
+  int? id;
 
   @observable
   String nome = '';
@@ -31,7 +31,7 @@ abstract class BaseAtividadeModel with Store {
       {required this.nome, required this.idCurso, this.feito = false});
 
   BaseAtividadeModel.fromDb(Map<String, dynamic> map)
-      : id = map['id'] ?? "",
+      : id = map['id'],
         nome = map['nome'] ?? "",
         feito = map['feito'] == 'true',
         idCurso = map['idCurso'] ?? 0;

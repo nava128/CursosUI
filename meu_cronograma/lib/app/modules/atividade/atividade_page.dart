@@ -50,7 +50,7 @@ class AtividadePageState extends State<AtividadePage> {
                     context: context,
                     builder: (BuildContext context) => DialogAtividade(
                         atividade:
-                            AtividadeModel.empty(idCurso: widget.curso.id))),
+                            AtividadeModel.empty(idCurso: widget.curso.id!))),
                 child: const Text(
                   'Adicionar nova atividade',
                   style: TextStyle(fontSize: 18, color: Colors.white),

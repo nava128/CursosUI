@@ -28,7 +28,7 @@ class AtividadeRepository implements IAtividadeRepository {
     if (atividades.contains(atividade)) {
       db.update(Constants.atividadeTable, atividade.toMap(),
           where: 'id = ?', whereArgs: [atividade.id]);
-      id = atividade.id;
+      id = atividade.id!;
     } else {
       id = await db.insert(Constants.atividadeTable, atividade.toMap());
     }
@@ -38,7 +38,7 @@ class AtividadeRepository implements IAtividadeRepository {
   @override
   Future<List<AtividadeModel>> findAllAtividadesByCurso(
       CursoModel curso) async {
-    return await getAtividadesDb(curso.id);
+    return await getAtividadesDb(curso.id!);
   }
 
   Future<List<AtividadeModel>> getAtividadesDb(int idCurso) async {

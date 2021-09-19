@@ -53,7 +53,7 @@ abstract class _AtividadeStoreBase with Store {
           await _repository.findAllAtividadesByCurso(curso));
       updatePercentAtividadeConcluido();
     }
-    _atividades.sort((a, b) => a.id.compareTo(b.id));
+    _atividades.sort((a, b) => a.id!.compareTo(b.id!));
     return _atividades;
   }
 
