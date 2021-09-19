@@ -8,7 +8,7 @@ part 'curso_model.g.dart';
 class CursoModel = BaseCursoModel with _$CursoModel;
 
 abstract class BaseCursoModel with Store {
-  int id = 0;
+  int? id;
 
   @observable
   String nome = "";
@@ -55,7 +55,7 @@ abstract class BaseCursoModel with Store {
   BaseCursoModel.empty();
 
   BaseCursoModel.fromDb(Map<String, dynamic> map)
-      : id = map['id'] ?? 0,
+      : id = map['id'],
         nome = map['nome'] ?? "",
         descricao = map['descricao'] ?? "",
         link = map['link'],

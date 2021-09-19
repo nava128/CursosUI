@@ -53,7 +53,7 @@ class CursoRepository implements ICursoRepository {
       cursos = await getCursosDb();
     }
     List<CursoModel> cursosFiltrados = _filterList(cursos, filter);
-    cursosFiltrados.sort((a, b) => a.id.compareTo(b.id));
+    cursosFiltrados.sort((a, b) => a.id!.compareTo(b.id!));
     return cursosFiltrados;
   }
 
