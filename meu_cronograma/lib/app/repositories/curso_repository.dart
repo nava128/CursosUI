@@ -57,7 +57,7 @@ class CursoRepository implements ICursoRepository {
     return cursosFiltrados;
   }
 
-  List<CursoModel> _filterList(List<CursoModel> cursos, String filter) {
+  List<CursoModel> _filterList(List<CursoModel> cursos, String? filter) {
     if (filter != null) {
       return cursos.where((element) => element.nome.contains(filter)).toList();
     } else {

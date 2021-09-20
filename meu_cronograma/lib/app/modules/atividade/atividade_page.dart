@@ -1,15 +1,15 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:meu_cronograma/app/domain/atividade_model.dart';
-import 'package:meu_cronograma/app/domain/curso_model.dart';
-import 'package:meu_cronograma/app/modules/atividade/atividade_store.dart';
-import 'package:flutter/material.dart';
-import 'package:meu_cronograma/app/modules/atividade/progress_circle.dart';
-import 'package:meu_cronograma/app/shared/widgets/background_box_decoration.dart';
-import 'package:meu_cronograma/app/shared/widgets/logo_widget.dart';
 
+import '../../domain/atividade_model.dart';
+import '../../domain/curso_model.dart';
+import '../../shared/widgets/background_box_decoration.dart';
+import '../../shared/widgets/logo_widget.dart';
+import 'atividade_store.dart';
 import 'dialog_atividade.dart';
 import 'listagem_atividade.dart';
+import 'progress_circle.dart';
 
 class AtividadePage extends StatefulWidget {
   final CursoModel curso;

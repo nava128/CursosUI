@@ -39,7 +39,7 @@ class _ListagemCursoState extends State<ListagemCurso> {
                   child: _buildListTile(curso, context),
                   actions: [
                     Visibility(
-                      visible: curso.link != null,
+                      visible: true,
                       child: IconSlideAction(
                         caption: 'Acessar',
                         color: Colors.yellow[600],
@@ -75,7 +75,7 @@ class _ListagemCursoState extends State<ListagemCurso> {
     return ListTile(
       onTap: () => _navigateToAtividades(curso, context),
       leading: CircleAvatar(
-        child: curso.logoImage ?? Image.asset("assets/images/camera-empty.png"),
+        child: curso.logoImage,
       ),
       title: Text(
         curso.nome,
