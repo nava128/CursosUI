@@ -1,4 +1,8 @@
-# meu_cronograma
+# Meu Cronograma
+
+Projeto da Digital Innovation One, utiliza estrutura modular com o uso de Slidy, banco de dados sqlite para cadastrar os dados e alguns testes.
+
+
 
 A new Flutter project.
 
