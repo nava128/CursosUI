@@ -3,7 +3,7 @@
 
 Projeto da Digital Innovation One, utiliza estrutura modular com o uso de Slidy, banco de dados sqlite para cadastrar os dados e alguns testes.
 
-Agradecimentos a comunidade do discord da Academia do Flutter, para atualização com null safety.
+Agradecimentos a comunidade do discord da Academia do Flutter e o instrutor Rodrigo Rahman, para atualização com null safety.
 
 <img src="https://github.com/gisesma/flutterCursosApp/blob/main/telasapp.png" width="70%" height="70%" alt="Tela de inicio do bmi calculator">
 
