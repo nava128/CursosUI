@@ -5,7 +5,7 @@ Projeto da Digital Innovation One, utiliza estrutura modular com o uso de Slidy,
 
 Agradecimentos a comunidade do discord da Academia do Flutter, para atualização com null safety.
 
-<img src="https://github.com/gisesma/flutterCursosApp/blob/main/telasapp.png" width="30%" height="30%" alt="Tela de inicio do bmi calculator">
+<img src="https://github.com/gisesma/flutterCursosApp/blob/main/telasapp.png" width="70%" height="70%" alt="Tela de inicio do bmi calculator">
 
 Para utilizar o flutter é necessário instalar o Dart SDK versão mínima 2.12
 
