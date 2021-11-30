@@ -32,7 +32,7 @@ https://flutter.dev/docs/development/tools/vs-code
 Clonando o repositório:
 
 ```
-$ git clone https://github.com/gisesma/pagamentosapp
+$ git clone https://github.com/gisesma/flutterCursosApp
 ```
 
 Baixar as dependências do projeto:
