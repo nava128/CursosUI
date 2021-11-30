@@ -43,7 +43,7 @@ class CursoRepository implements ICursoRepository {
       }
       cursos.add(curso);
     } catch (e) {
-      print(e);
+      //print(e);
     }
   }
 
@@ -97,6 +97,7 @@ class CursoRepository implements ICursoRepository {
 
   @override
   void dispose() {
+    // ignore: todo
     // TODO: implement dispose
   }
 }

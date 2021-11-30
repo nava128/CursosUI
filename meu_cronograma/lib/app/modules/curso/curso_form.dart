@@ -13,6 +13,7 @@ import '../../domain/curso_model.dart';
 class CursoForm extends StatefulWidget {
   final CursoModel curso;
 
+  // ignore: prefer_const_constructors_in_immutables
   CursoForm({Key? key, required this.curso}) : super(key: key);
 
   @override
@@ -48,6 +49,7 @@ class _CursoFormState extends State<CursoForm> {
                   child: GestureDetector(
                       onTap: () => updateImage(),
                       child: Center(
+                        // ignore: sized_box_for_whitespace
                         child: Container(
                             height: 200,
                             width: 200,
@@ -92,7 +94,7 @@ class _CursoFormState extends State<CursoForm> {
                         borderRadius: BorderRadius.circular(30.0)),
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        print(widget.curso);
+                        //print(widget.curso);
 
                         _cursoRepository.save(widget.curso);
 

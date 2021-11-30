@@ -50,7 +50,5 @@ class AtividadeRepository implements IAtividadeRepository {
   }
 
   @override
-  void dispose() {
-    // TODO: implement dispose
-  }
+  void dispose() {}
 }

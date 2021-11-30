@@ -13,6 +13,7 @@ class DialogAtividade extends StatelessWidget {
     return Dialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
       //this right here
+      // ignore: sized_box_for_whitespace
       child: Container(
         height: 250,
         child: Padding(
@@ -22,9 +23,7 @@ class DialogAtividade extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Text(
-                  atividade.nome == null
-                      ? 'Nova Atividade'
-                      : 'Editar Atividade',
+                  atividade.nome,
                   style: const TextStyle(fontSize: 25, color: Colors.red),
                 ),
               ),
