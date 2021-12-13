@@ -7,6 +7,64 @@ Agradecimentos a comunidade do discord da Academia do Flutter e o instrutor Rodr
 
 <img src="https://github.com/gisesma/flutterCursosApp/blob/main/telasapp.png" width="70%" height="70%" alt="Tela de inicio do bmi calculator">
 
+
+## Estrutura
+
+```lib
+|   main.dart
+|   
+\---app
+    |   app_module.dart
+    |   app_widget.dart
+    |   
+    +---domain
+    |       atividade_model.dart
+    |       atividade_model.g.dart
+    |       curso_model.dart
+    |       curso_model.g.dart
+    |       
+    +---modules
+    |   +---atividade
+    |   |       atividade_form.dart
+    |   |       atividade_module.dart
+    |   |       atividade_page.dart
+    |   |       atividade_store.dart
+    |   |       atividade_store.g.dart
+    |   |       dialog_atividade.dart
+    |   |       listagem_atividade.dart
+    |   |       progress_circle.dart
+    |   |       
+    |   +---curso
+    |   |       curso_form.dart
+    |   |       curso_module.dart
+    |   |       curso_page.dart
+    |   |       curso_store.dart
+    |   |       curso_store.g.dart
+    |   |       
+    |   \---home
+    |           home_module.dart
+    |           home_page.dart
+    |           home_store.dart
+    |           home_store.g.dart
+    |           listagem_curso.dart
+    |           progress_list_bar.dart
+    |           web_view_curso.dart
+    |           
+    +---repositories
+    |   |   atividade_repository.dart
+    |   |   constants.dart
+    |   |   curso_repository.dart
+    |   |   
+    |   \---interfaces
+    |           atividade_repository_interface.dart
+    |           curso_repository_interface.dart
+    |           
+    \---shared
+        \---widgets
+                background_box_decoration.dart
+                logo_widget.dart
+```
+
 Para utilizar o flutter é necessário instalar o Dart SDK versão mínima 2.12
 
 Para instalar, maiores instruções no link [Dart SDK](https://www.dartlang.org/downloads/):
